@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -25,7 +26,7 @@ int main(void)
 	}
 	else
 	{
-		printf("is negative")
+		printf("is negative");
 	}
 	return (0);
 }
