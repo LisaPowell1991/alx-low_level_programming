@@ -11,18 +11,14 @@
 
 int main(void)
 {
-	int n;
+	int n = 'a';
 
-	for (n = 'A'; n <= 'Z'; n++)
-	{
-		n = tolower(n);
-		putchar(n);
-	}
-	for (n = 'a'; n <= 'z'; n++)
-	{
-		n = toupper(n);
-		putchar(n);
-	}
+	while (n <= 'z')
+	putchar(n++);
+	n = 'A';
+
+	while (n <= 'Z')
+	putchar(n++);
 	putchar('\n');
 	return (0);
 }
