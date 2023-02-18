@@ -12,9 +12,7 @@
 int main(void)
 {
 	int n;
-for (n = 'A'; n <= 'z'; n++)
-{
-	n = tolower(n);
+
 	while (n <= 'z')
 	{
 	n++;
@@ -22,7 +20,6 @@ for (n = 'A'; n <= 'z'; n++)
 		n++;
 	}
 	putchar(n);
-	}
 putchar('\n');
 return (0);
 }
