@@ -11,9 +11,10 @@
 
 int main(void)
 {
-for (int x = 'A'; x <= 'Z'; x++)
+for (int x = 'A'; x <= 'z'; x++)
 {
-putchar(tolower(x));
+	x = tolower(x);
+	putchar(x);
 }
 return (0);
 }
