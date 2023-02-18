@@ -11,7 +11,12 @@
 
 int main(void)
 {
-	int n;
+	int n = 'A';
+
+	while (n <= 'Z')
+	{
+		n = tolower(n);
+		n++;
 
 	while (n <= 'z')
 	{
@@ -20,6 +25,7 @@ int main(void)
 		n++;
 	}
 	putchar(n);
+	}
 putchar('\n');
 return (0);
 }
