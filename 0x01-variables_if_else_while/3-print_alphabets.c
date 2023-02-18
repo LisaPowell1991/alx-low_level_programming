@@ -18,7 +18,7 @@ int main(void)
 		n = tolower(n);
 		putchar(n);
 	}
-	for (n = 'a'; n <= 'Z'; n++)
+	for (n = 'a'; n <= 'z'; n++)
 	{
 		n = toupper(n);
 		putchar(n);
