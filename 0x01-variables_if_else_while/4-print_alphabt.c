@@ -11,21 +11,18 @@
 
 int main(void)
 {
-	int n = 'A';
-
-	while (n <= 'Z')
-	{
-		n = tolower(n);
-		n++;
+	int n = 'a';
 
 	while (n <= 'z')
 	{
-	n++;
-	if (n == 'q' || n == 'e')
+		n = tolower(n);
 		n++;
+		if (n == 'q' || n == 'e')
+		{
+			n++;
+		}
+		putchar(n);
 	}
-	putchar(n);
-	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
