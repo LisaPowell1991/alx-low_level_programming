@@ -11,24 +11,30 @@
 
 int main(void)
 {
-	int i, j;
+	int i, j, k, l;
 
-	for (i = '0'; i <= 100; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (j = '0'; j <= 100; j++)
+		for (j = '0'; j <= '9'; j++)
 		{
-			if (j > i)
+			for (k = '0'; k <= '9'; k++)
 			{
-				putchar(i / 10 + '0');
-				putchar(i % 10 + '0');
-				putchar(' ');
-				putchar(j / 10 + '0');
-				putchar(j % 10 + '0');
-
-				if (i * 100 + j != 9899)
+				for (l = '0'; l <= '9'; l++)
 				{
-					putchar(',');
-					putchar(' ');
+					if ((i < k) || (i ==  k && j < l))
+					{
+						putchar(i);
+						putchar(j);
+						putchar(' ');
+						putchar(k);
+						putchar(l);
+
+					if (!(i == '9' && j == '9'))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+					}
 				}
 			}
 		}
