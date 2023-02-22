@@ -6,34 +6,36 @@
 
 void times_table(void)
 {
-	int  m, n, p;
 
-	for (m = 0; m < 10; m++)
+int rone, cone, d;
+
+	for (rone = 0; rone <= 9; rone++)
 	{
-		for (n = 0; n < 10; n++)
+		_putchar('0');
+		_putchar(',');
+		_putchar(' ');
+		for (cone = 1; cone <= 9; cone++)
 		{
-			p = m * n;
-			if (n == 0)
-				_putchar(p + '0');
+			d = (rone * cone);
+			if ((d / 10) > 0)
+			{
+				_putchar((d / 10) + '0');
+			}
 			else
 			{
-				if (p < 10)
-				{
-					_putchar(',');
-					_putchar(32);
-					_putchar(32);
-					_putchar(p + '0');
-				}
-				else
-				{
-					_putchar(',');
-					_putchar(32);
-					_putchar((p / 10) + '0');
-					_putchar((p % 10) + '0');
-				}
+				_putchar(' ');
+			}
+			_putchar((d % 10) + '0');
+
+			if (cone < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 		_putchar('\n');
 	}
+
 }
+
 }
