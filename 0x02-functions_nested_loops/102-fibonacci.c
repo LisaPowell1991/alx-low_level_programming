@@ -15,10 +15,10 @@ int main(void)
 	long int first = 1, second = 2;
 	long int next = first + second;
 
-	printf("lu, ", first);
+	printf("%lu, ", first);
 	printf("%lu, ", second);
 
-		while (count < 50)
+		while (count <= 50)
 		{
 		if (count == 50)
 		{
@@ -30,7 +30,8 @@ int main(void)
 		}
 		first = second;
 		second = next;
-		cout++;
+		next = first + second;
+		count++;
 		}
 		return (0);
 }
