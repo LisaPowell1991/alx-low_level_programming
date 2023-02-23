@@ -1,28 +1,46 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_square - function that prints a squaare
+ * main - function that prints fizz, buzz, fizzbuzz
  *@size: interger
  * Return: nothing
  */
 
-void print_square(int size)
+int main(void)
 {
-	int i, n;
+	int i;
 
-	if (size <= 0)
+	for (i = 1; i <= 100; i++)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (i = 0; i < size; i++)
+		if (i % 3 == 0)
 		{
-			for (n = 0; n < size; n++)
-			{
-				_putchar(35);
-			}
-			_putchar('\n');
+			printf("Fizz\n");
+		}
+		
+		else if (i % 5 == 0)
+		{
+			printf("Buzz\n");
+		}
+		
+		else if (i % 15 == 0)
+		{
+			printf("FizzBuzz");
+		}
+		else {
+			printf("%d\n", i);
 		}
 	}
+	return (0);
+}
+
+
+
+
+
+
+
+
+
+
 }
