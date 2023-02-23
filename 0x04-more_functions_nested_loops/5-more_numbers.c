@@ -3,7 +3,7 @@
 /**
  * more_numbers - prints numbers from 0-14, ten times.
  *
- * Return:returns 1-14 10times.
+ * Return:void
  */
 
 void more_numbers(void)
@@ -14,7 +14,7 @@ void more_numbers(void)
 	{
 		for (j = 0; j <= 14; j++)
 		{
-			if (j > 9)
+			if (j >= 10)
 			{
 				_putchar((j / 10) + '0');
 			}
