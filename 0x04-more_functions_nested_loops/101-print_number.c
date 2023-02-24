@@ -1,20 +1,31 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main  - prime factor numbers
- *
+ * print_number - prints integer
+ *@n:integer
  * Return: 0
  */
 
-int main(void)
+void print_number(int n);
 {
-	long num = 612852475143, i;
+        if (n < 0)
+        {
+                _putchar('-');
+                n = -n;
+        }
 
-	for (i = 2; i < num; i++)
-	{
-		while (num % i == 0)
-			num = num / i;
-	}
-			printf("%lu\n", num);
-	return (0);
+        if (n == 0)
+        {
+                _putchar('0');
+        }
+
+        if (n /10)
+        {
+                print_number(n / 10);
+
+                _putchar(n % 10 + '0');
+        }
+        _putchar('\n');
 }
+
+     
