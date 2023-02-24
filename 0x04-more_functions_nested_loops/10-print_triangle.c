@@ -18,19 +18,23 @@ void print_triangle(int size)
 	}
 	else
 	{
-		for (a = 0; a < size; a++)
+		for (a = 1; a <= size; a++)
 		{
-			for (b = size - a; b > 1; b--)
+			for (b = size; b > 0; b--)
 			{
-				putchar(32);
-			}
-
-			for (c = 0; c <= a; c++)
+				if (j == i)
+				{
+					for (c = a; c > 0; c--)
+					{
+						putchar('#');
+					}
+				else if (b > a)
 			{
-				putchar(35);
+				putchar(' ');
 			}
+				}
 			putchar('\n');
+			}
 		}
 	}
 }
-
