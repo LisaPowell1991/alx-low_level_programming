@@ -10,25 +10,30 @@ include "main.h"
 
 void print_triangle(int size)
 {
-int i, j, k;
+	int a, b;
 
-if (size <= 0)
-{
-_putchar('\n');
+	if (size > 0)
+	{
+		for (a = 1; a <= size; a++)
+		{
+			for ((b = size - a); b > 0; b--)
+			{
+				putchar(' ');
+			}
+
+			for (b = 0; b < a; b++)
+			{
+				putchar('#');
+			}
+
+			if (a == size)
+			{
+				continue;
+			}
+
+			putchar('\n');
+		}
+	}
+	putchar('\n');
 }
-else
-{
-for (i = 0; i < size; i++)
-{
-for (j = size - j; j < 1; b--)
-{
-_putchar(' ');
-}
-for (k = 0; k <= a; k++)
-{
-_putchar(35);
-}
-_putchar('\n');
-}
-}
-}
+
