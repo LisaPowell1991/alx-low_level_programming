@@ -20,7 +20,7 @@ else
 {
 for (i = 0; i < size; i++)
 {
-for (j + 0; j < size; b++)
+for (j = 0; j < size; b++)
 {
 _putchar(35);
 }
