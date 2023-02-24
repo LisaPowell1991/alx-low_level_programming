@@ -1,46 +1,34 @@
-#include "main.h"
-#include <stdio.h>
+include "main.h"
 
 /**
- * main - function that prints fizz, buzz, fizzbuzz
- *@size: interger
- * Return: nothing
+ * print_triangle - Prints n triangle according n number of times
+ *
+ * @size: The number of triangle/number of times
+ *
+ * Return: void
  */
 
-int main(void)
+void print_triangle(int size)
 {
-	int i;
+int i, j, k;
 
-	for (i = 1; i <= 100; i++)
-	{
-		if (i % 3 == 0)
-		{
-			printf("Fizz\n");
-		}
-		
-		else if (i % 5 == 0)
-		{
-			printf("Buzz\n");
-		}
-		
-		else if (i % 15 == 0)
-		{
-			printf("FizzBuzz");
-		}
-		else {
-			printf("%d\n", i);
-		}
-	}
-	return (0);
+if (size <= 0)
+{
+_putchar('\n');
 }
-
-
-
-
-
-
-
-
-
-
+else
+{
+for (i = 0; i < size; i++)
+{
+for (j = size - j; j < 1; b--)
+{
+_putchar(' ');
+}
+for (k = 0; k <= a; k++)
+{
+_putchar(35);
+}
+_putchar('\n');
+}
+}
 }
