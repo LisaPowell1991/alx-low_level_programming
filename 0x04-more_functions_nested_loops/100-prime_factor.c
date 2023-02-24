@@ -8,16 +8,13 @@
 
 int main(void)
 {
-	int num = 612852475143, i;
+	long num = 612852475143, i;
 
-	for (i = 1; i <= num; ++i)
+	for (i = 2; i < num; i++)
 	{
-		if (num % i == 0)
-		{
-			printf("%d ", i)
-		}
+		while (num % i == 0)
+			num = num / i;
 	}
-	printf("\n");
-
+			printf("%lu\n", num);
 	return (0);
 }
