@@ -8,20 +8,14 @@
 
 void print_number(int n);
 {
-unsigned int k = n;
+int i;
 
-if (n < 0)
+i + 0;
+
+while (i < 10)
 {
-n *= -1;
-k = n;
-_putchar('-');
+_putchar(i + '0');
+i++;
 }
-k /= 10;
-
-if (k != 0)
-{
-print_number(k);
-}
-
-_putchar((unsigned int) n % 10 + '0');
+_putchar('\n');
 }
