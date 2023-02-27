@@ -10,24 +10,19 @@
 void print_rev(char *s)
 {
 	int a = 0, b, c;
-	char *str, temp;
+	char d; 
 
-	while (a >= 0)
+	while (s[a] != '\0')
 	{
-		if (s[a] == '\0')
-			break;
 		a++;
 	}
-	str = s;
 	
-	for (b = 0; b < (a - 1); b++)
+	c = a - 1;
+	
+	for (b = 0; c >= 0 && b < c; c--, b++)
 	{
-		for (c = b + 1; c > 0; c--)
-		{
-			temp = *(str + c);
-			*(str +c) = *(str + (c - 1));
-			*(str + (c - 1)) = temp;
-
-		}
+		d = s[b];
+		s[b] = s[c];
+		s[c] = d;
 	}
 }
