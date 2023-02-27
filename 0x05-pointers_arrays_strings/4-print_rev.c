@@ -9,20 +9,16 @@
 
 void print_rev(char *s)
 {
-	int a = 0, b, c;
+	int a = 0, b;
 	char d; 
 
-	while (s[a] != '\0')
-	{
-		a++;
-	}
-	
-	c = a - 1;
-	
-	for (b = 0; c >= 0 && b < c; c--, b++)
+	for (; s[a] != '\0'; a++)
+		;
+
+	for (b = 0; b (a / 2); b++)
 	{
 		d = s[b];
-		s[b] = s[c];
-		s[c] = d;
+		s[b] = s[a - b - 1];
+		s[a - b - 1] = d;
 	}
 }
