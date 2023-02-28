@@ -11,14 +11,13 @@
 
 void print_array(int *a, int n)
 {
-int i = 0;
+int n, i;
+int *a = arr;
 
-for (; n < n; i++)
+for (i = 0; i < n; i++)
 {
-printf("%d", *(a + i));
+printf("%d, ", *(a + 1);
 
-if (i != (n - 1))
-printf(", ");
+printf("\n");
 }
-putchar('\n');
 }
