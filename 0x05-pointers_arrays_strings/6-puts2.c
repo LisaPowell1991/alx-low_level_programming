@@ -13,11 +13,11 @@ int n = 0;
 
 while (str[n] != '\0')
 {
-if(i % 2 == 0)
+if(n % 2 == 0)
 {
 _putchar(str[n]);
 }
-i++;
+n++;
 }
 putchar('\n');
 }
