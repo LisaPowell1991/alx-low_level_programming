@@ -5,8 +5,9 @@
 
 /**
  * main - generate random valid passwords
- * @s: char to check
- *
+ * @a: int to check
+ * @b:int to check
+ **2772 is the total sum of the ASCII values of all the characters in the password, including the missing character.
  * Return: 0 is success
  */
 
@@ -14,8 +15,6 @@ int main(void)
 {
 int a = 0, b = 0;
 time_t t;
-
-//2772 is the total sum of the ASCII values of all the characters in the password, including the missing character.
 
 srand((unsigned int) time(&t));
 while (b < 2772)
