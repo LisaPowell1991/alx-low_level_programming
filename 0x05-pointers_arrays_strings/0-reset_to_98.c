@@ -10,5 +10,8 @@
 void reset_to_98(int *n)
 {
 	n[0] = 98;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed3e189a7a805f66cfe7ed65959794b2d9af2d95
 }
