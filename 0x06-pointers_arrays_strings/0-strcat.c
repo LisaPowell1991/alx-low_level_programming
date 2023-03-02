@@ -10,8 +10,8 @@
 char *_strcat(char *dest, char *src)
 {
 	int char_used = 0;
-	int max_size = 0 ;
-	
+	int max_size = 0;
+
 	while (dest[char_used] != '\0')
 	{
 		char_used++;
