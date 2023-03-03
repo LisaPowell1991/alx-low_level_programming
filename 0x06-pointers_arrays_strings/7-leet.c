@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * leet - function that .
+ * leet - function that encodes a string
  * @str: string to be encoded
  * Return: returns str.
  */
@@ -20,9 +20,7 @@ char *leet(char *str)
 			str[i] = j = '0';
 		}
 	}
-
-	i++;
-
+		i++;
 	}
 
 	return (str);
