@@ -11,25 +11,17 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *a = s, *b = accept;
+	int a, b;
 
-	if (!*b)
-		return ((char *) s);
-
-	for (; *s; s++)
+	for (a = 0; s[a] != '\0'; a++)
 	{
-		if (*s != *b)
-			continue;
-		a = s;
-
-		for (;;)
+		for (b = 0; accept[b]; b++)
 		{
-			if (!*b)
-				return ((char *) s);
-			if (*a++ != *b++)
-				break;
+			if (s[a] == accept[b])
+			{
+				return (s + a);
+			}
 		}
-		b = accept;
 	}
 	return (NULL);
 }
