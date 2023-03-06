@@ -24,10 +24,12 @@ char *_strstr(char *haystack, char *needle)
 			do {
 				if (needle[a + 1] == '\0')
 					return (haystack);
+				
 				a++;
+
 			} while(haystack[a] == needle[a]);
 		}
 		haystack++;
 	}
-	return (0);
+	return ('\0');
 }
