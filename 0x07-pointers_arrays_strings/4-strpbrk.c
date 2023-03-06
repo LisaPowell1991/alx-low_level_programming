@@ -13,21 +13,17 @@ char *_strpbrk(char *s, char *accept)
 {
 	char *a = s, *b = accept;
 
-	if (!*b)
-		return ((char *) s);
-	for (; *s; s++)
+	for (;;)
 	{
-		if (*s != *b)
-			continue;
-		a = s;
-		for (;;)
-		{
-			if (!*b)
-				return ((char *) s);
+		if (*b == 0)
+			return (char *s);
+
+		if (*a == 0)
+			return (NULL);
 		if (*a++ != *b++)
-			break;
+		{
+			a = ++s;
+			b = accept;
 		}
-		b = accept;
 	}
-	return (NULL);
 }
