@@ -10,26 +10,31 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int a;
+int a = 0, b, c;
 
-	if (*needle == 0)
-		return (haystack);
+if (needle[0] == '\0')
+return (haystack);
 
-	while (*haystack)
-	{
-		a = 0;
-
-		if (haystack[a] == needle[a])
-		{
-			do {
-				if (needle[a + 1] == '\0')
-					return (haystack);
-				
-				a++;
-
-			} while(haystack[a] == needle[a]);
-		}
-		haystack++;
-	}
-	return ('\0');
+while (haystack[a] != '\0') /* iterate through haystack */
+{
+/* if a byte matches first char of needle */
+/* interate through needle until match ends */
+if (haystack[a] == needle[0])
+{
+c = a, b = 0;
+while (needle[b] != '\0')
+{
+if (haystack[c] == needle[b])
+c++, b++;
+else
+			break;
+} /* if matched throughout, return haystack */
+if (needle[b] == '\0')
+{
+return (haystack + a);
+}
+}
+a++;
+}
+return (NULL); /* No match */
 }
