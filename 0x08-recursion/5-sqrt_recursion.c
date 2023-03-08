@@ -4,7 +4,7 @@
  * _sqrt_recur - helper func
  * @n: integer
  * @x: integer
- * return: output
+ * Return: square root
  */
 
 int _sqrt_recur(int n, int x)
