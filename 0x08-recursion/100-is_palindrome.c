@@ -1,26 +1,53 @@
 #include "main.h"
 
+int is_palindrome(char *s);
+int find_strlen(char *s);
+int check_if_palindrome(char *s, int index, int length);
+
 /**
- * wildcmp- function that compares 2 strings
- * @s1: integer
- * @s2: integer
- * Return: returns 1 if identical
+ * is_palindrome - function that confirm a string is a palindrome.
+ * @s: integer
+ * Return: returns 1 if palindrome
  * otherwise 0.
  */
 
-int wildcmp(char *s1, char *s2)
+int is_palindrome(char *s)
 {
-	if ((*s1 == '\0' && *s2 == '\0')
-			return (1);
+	if (!s)
+		return (1);
+	return (check_if_palindrome(s, 0, find_strlen(s)));
 
-			if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
-			return (0);
+}
+/**
+ * find_strlen - function that determines length of string.
+ * @s: integer
+ * Return: returns length of string
+ */
 
-			if (*s1 == *s2)
-			return (wildcmp(s1 + 1, s2 + + 1));
+int find_strlen(char *s)
+{
+	if (*s != '\0')
+		return (1 + find_strlen(s + 1));
+	else
+		return (0);
+}
 
-			if (*s2 == '*')
-			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
+/**
+ * check_if_palindrome - function that check if a string is a palindrome.
+ * @s: string
+ * @index: index
+ * @length: length of string
+ * Return: returns 1 if palindrome
+ * otherwise 0.
+ */
 
-			return (0);
+int check_if_palindrome(char *s, int index, int length)
+{
+	if (s[index] == s[length / 2])
+	return (1);
+
+	if (s[index] == s[length - index - 1])
+		return (check_if_palindrome(s, index + 1, length));
+
+	return (0);
 }
