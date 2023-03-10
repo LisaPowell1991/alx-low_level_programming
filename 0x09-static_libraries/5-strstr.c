@@ -36,5 +36,5 @@ return (haystack + a);
 }
 a++;
 }
-return (NULL); /* No match */
+return ('\0'); /* No match */
 }

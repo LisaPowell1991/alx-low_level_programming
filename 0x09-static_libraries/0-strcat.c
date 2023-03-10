@@ -24,5 +24,4 @@ char *_strcat(char *dest, char *src)
         }
         dest[char_used] = '\0';
         return (dest);
-}
-~                          
+}                          
