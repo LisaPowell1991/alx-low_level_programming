@@ -3,11 +3,13 @@
 
 /**
  * main -  function that prints name, followed by a new line.
- * @s:char
- * Return: returns void.
+ * @argc:integer
+ * @argv:integer
+ * Return: returns 0.
  */
 
-int main(int argc, char *argv[]) {
-	printf("%s\n",argv[0]);
-	return 0;
+int main(int argc, char **argv)
+{
+	printf("%s", argv[0]);
+	return (0);
 }
