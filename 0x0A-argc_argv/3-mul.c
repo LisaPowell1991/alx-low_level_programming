@@ -9,7 +9,7 @@
  * Return: returns 0 or 1 if there is not 2 arguments.
  */
 
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
 	int i, j, mul;
 
