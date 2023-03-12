@@ -24,32 +24,27 @@ int main(int argc, char *argv[])
 
 	while (cents > 0)
 	{
-		count++;
-
-		if ((cents - 25) > 0)
+		if (cents >= 25)
 		{
 			cents -= 25;
-			continue;
 		}
-		if ((cents - 10) > 0)
+		else if (cents >= 10)
 		{
 			cents -= 10;
-			continue;
+
 		}
-		if ((cents - 5) > 0)
+		else if (cents >= 5)
 		{
 			cents -= 5;
-			continue;
 		}
-		if ((cents - 2) > 0)
+		else if (cents >= 2)
 		{
 			cents -= 2;
-			continue;
 		}
-		cents--;
+		else if (cents >= 1)
+			cents -= 1;
+		count += 1;
 	}
 	printf("%d\n", count);
 	return (0);
 }
-
-
