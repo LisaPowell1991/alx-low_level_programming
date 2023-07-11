@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include "main.h"
+
+#define BUFFER_SIZE 1024
 
 /**
  * displayUsageError - Displays an error message for incorrect command usage
@@ -29,7 +28,8 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
-	output_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	output_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+
 	if (output_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination);
@@ -57,7 +57,9 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
+
 }
+
 /**
  * main - Entry point of the program
  * @argc: Number of command-line arguments
