@@ -28,7 +28,7 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
-	output_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0777);
+	output_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (output_fd < 0)
 	{
