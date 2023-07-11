@@ -33,7 +33,6 @@ void copyFile(const char *source, const char *destination)
 	if (output_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination);
-		close(input_fd);
 		exit(99);
 	}
 	while ((num_bytes_read = read(input_fd, buffer, BUFSIZ)) > 0)
