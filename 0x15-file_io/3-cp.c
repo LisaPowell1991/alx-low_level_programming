@@ -57,9 +57,7 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
-
 }
-
 /**
  * main - Entry point of the program
  * @argc: Number of command-line arguments
