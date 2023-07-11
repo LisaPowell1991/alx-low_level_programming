@@ -49,6 +49,8 @@ void copyFile(const char *source, const char *destination)
 	if (num_bytes_read < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
+		close(input_fd);
+		close(output_fd);
 		exit(98);
 	}
 	if (close(input_fd) < 0 || close(output_fd) < 0)
@@ -57,6 +59,7 @@ void copyFile(const char *source, const char *destination)
 		exit(100);
 	}
 }
+
 /**
  * main - Entry point of the program
  * @argc: Number of command-line arguments
