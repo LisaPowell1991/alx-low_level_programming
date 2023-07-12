@@ -53,7 +53,7 @@ void copyFile(const char *source, const char *destination)
 		close(output_fd);
 		exit(98);
 	}
-	if (close(input_fd) < 0 || close(output_fd) < 0)
+	if (close(input_fd) < -1 || close(output_fd) < -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
