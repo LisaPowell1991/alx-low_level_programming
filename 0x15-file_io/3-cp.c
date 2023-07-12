@@ -58,6 +58,8 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
+	close(input_fd);
+	close(output_fd);
 }
 
 /**
