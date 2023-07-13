@@ -41,8 +41,6 @@ void copyFile(const char *source, const char *destination)
 		if (num_bytes_written != num_bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination);
-			close(input_fd);
-			close(output_fd);
 			exit(99);
 		}
 	}
