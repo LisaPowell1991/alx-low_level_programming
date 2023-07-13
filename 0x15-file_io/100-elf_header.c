@@ -23,7 +23,6 @@ void print_error(const char *message)
 void read_elf_header(const char *filename, Elf64_Ehdr *header)
 {
 	ssize_t bytes_read;
-
 	int fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
@@ -36,7 +35,6 @@ void read_elf_header(const char *filename, Elf64_Ehdr *header)
 
 	close(fd);
 }
-
 /**
  * validate_elf_header - Validates if the given
  * header corresponds to an ELF file
@@ -47,11 +45,10 @@ void validate_elf_header(const Elf64_Ehdr *header)
 {
 	if (header->e_ident[EI_MAG0] != ELFMAG0
 			|| header->e_ident[EI_MAG1] != ELFMAG1 ||
-	    header->e_ident[EI_MAG2] != ELFMAG2 ||
-	    header->e_ident[EI_MAG3] != ELFMAG3)
+			header->e_ident[EI_MAG2] != ELFMAG2 ||
+			header->e_ident[EI_MAG3] != ELFMAG3)
 		print_error("Not an ELF file.");
 }
-
 /**
  * print_elf_header - Prints the information contained in the ELF header
  * @header: A pointer to the Elf64_Ehdr struct representing the ELF header
@@ -61,6 +58,7 @@ void print_elf_header(const Elf64_Ehdr *header)
 	int i;
 
 	printf("Magic:   ");
+
 	for (i = 0; i < EI_NIDENT; i++)
 		printf("%02x ", header->e_ident[i]);
 	printf("\nClass:   %s\n",
@@ -78,7 +76,6 @@ void print_elf_header(const Elf64_Ehdr *header)
 	printf("Entry point address: 0x%lx\n",
 			header->e_entry);
 }
-
 /**
  * process_elf_header - Processes the ELF header of the specified file
  * @filename: The name of the file to process the ELF header from
@@ -91,7 +88,6 @@ void process_elf_header(const char *filename)
 	validate_elf_header(&header);
 	print_elf_header(&header);
 }
-
 /**
  * main - Entry point of the program
  * @argc: The number of command-line arguments
@@ -105,7 +101,6 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		print_error("Invalid number of arguments.");
-
 	filename = argv[1];
 	process_elf_header(filename);
 

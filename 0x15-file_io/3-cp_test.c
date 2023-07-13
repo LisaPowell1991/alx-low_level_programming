@@ -19,7 +19,7 @@ void displayUsageError(void)
 void copyFile(const char *source, const char *destination)
 {
 	int input_fd, output_fd;
-	int close_status;
+	int close_status
 	ssize_t num_bytes_read, num_bytes_written;
 	char buffer[BUFSIZ];
 
