@@ -28,7 +28,7 @@ void copyFile(const char *source, const char *destination)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
-	output_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	output_fd = open(destination, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 
 	if (output_fd < 0)
 	{
@@ -57,6 +57,7 @@ void copyFile(const char *source, const char *destination)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
+		free(buffer);
 	}
 }
 
