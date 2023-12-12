@@ -14,29 +14,30 @@
 
 int interpolation_search(int *array, size_t size, int value)
 {
-        size_t low, high, probe_position;
-        double numerator, denominator;
+	size_t low, high, probe_position;
+	double numerator, denominator;
 
-        low = 0;
-        high = size - 1;
+	low = 0;
+	high = size - 1;
 
-        if (array == NULL || size == 0)
-                return (-1);
+	if (array == NULL || size == 0)
+		return (-1);
 
-        while (low <= high)
-        {
-                numerator = (double)(high - low);
-                denominator = array[high] - array[low];
-                probe_position = low + ((numerator / denominator) * (value - array[low]));
+	while (low <= high)
+	{
+		numerator = (double)(high - low);
+		denominator = array[high] - array[low];
+		probe_position = low + ((numerator / denominator) * (value - array[low]));
 
-                printf("Value checked array[%lu] = [%d]\n", probe_position, array[probe_position]);
+		printf("
+				Value checked array[%lu] = [%d]\n", probe_position, array[probe_position]);
 
-                if (array[probe_position] == value)
-                        return (probe_position);
-                else if (array[probe_position] < value)
-                        low = probe_position + 1;
-                else
-                        high = probe_position - 1;
-        }
-        return (-1);
+		if (array[probe_position] == value)
+			return (probe_position);
+		else if (array[probe_position] < value)
+			low = probe_position + 1;
+		else
+			high = probe_position - 1;
+	}
+	return (-1);
 }
