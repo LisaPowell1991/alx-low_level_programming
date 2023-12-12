@@ -29,8 +29,8 @@ int interpolation_search(int *array, size_t size, int value)
 		denominator = array[high] - array[low];
 		probe_position = low + ((numerator / denominator) * (value - array[low]));
 
-		printf("
-				Value checked array[%lu] = [%d]\n", probe_position, array[probe_position]);
+		printf("Value checked array[%lu] = [%d]\n",
+				probe_position, array[probe_position]);
 
 		if (array[probe_position] == value)
 			return (probe_position);
