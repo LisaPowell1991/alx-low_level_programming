@@ -35,7 +35,6 @@ int interpolation_search(int *array, size_t size, int value)
 			else
 				return (-1);
 		}
-
 		probe_position
 			= low + (int)((numerator / denominator) * (value - array[low]));
 
@@ -44,7 +43,6 @@ int interpolation_search(int *array, size_t size, int value)
 			printf("Value checked array[%lu] is out of range\n", probe_position);
 			return (-1);
 		}
-
 		printf("Value checked array[%lu] = [%d]\n",
 				probe_position, array[probe_position]);
 
