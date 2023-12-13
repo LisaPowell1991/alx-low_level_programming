@@ -1,5 +1,5 @@
-#ifndef __M_H__
-#define __M_H_
+#ifndef SEARCH_ALGOS_H
+#define SEARCH_ALGOS_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,4 +11,4 @@ int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 
-#endif
+#endif /* SEARCH_ALGOS_H */
