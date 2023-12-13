@@ -27,7 +27,20 @@ int interpolation_search(int *array, size_t size, int value)
 	{
 		numerator = (double)(high - low);
 		denominator = array[high] - array[low];
-		probe_position = low + ((numerator / denominator) * (value - array[low]));
+
+		if (denominator == 0)
+		{
+			if (array[low] == value)
+				return (low);
+			else
+				return (-1);
+		}
+
+		probe_position
+			= low + (int)((numerator / denominator) * (value - array[low]));
+
+		if (probe_position >= size)
+			return (-1);
 
 		printf("Value checked array[%lu] = [%d]\n",
 				probe_position, array[probe_position]);
