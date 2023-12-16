@@ -1,6 +1,63 @@
 #include "search_algos.h"
 
 /**
+ * print_array - Prints the elements of an array between 2 indices.
+ * @array: Pointer to the first element of the array.
+ * @start: Starting index of the subarray.
+ * @end: Ending index of the subarray.
+ */
+void print_array(int *array, size_t start, size_t end)
+{
+	size_t index;
+
+	printf("Searching in array: ");
+	for (index = start; index <= end; index++)
+	{
+		printf("%d", array[index]);
+		if (index < end)
+			printf(", ");
+	}
+	printf("\n");
+}
+
+/**
+ * advanced_binary_recursive - Recursively searches
+ * for a value in a sorted array.
+ * @array: Pointer to the first element of the array.
+ * @start: Starting index of the subarray.
+ * @end: Ending index of the subarray.
+ * @value: The value to search for.
+ *
+ * Return: The index where the value is located, or -1 if not found.
+ */
+int advanced_binary_recursive(int *array, size_t start, size_t end, int value)
+{
+	size_t middle;
+	int result;
+
+	if (start > end)
+		return (-1);
+
+	print_array(array, start, end);
+
+	middle = (start + end) / 2;
+
+	if (array[middle] == value)
+	{
+		return (middle);
+	}
+	else if (array[middle] > value)
+	{
+		return (advanced_binary_recursive(array, start, middle - 1, value));
+	}
+	else
+	{
+		result = advanced_binary_recursive(array, middle + 1, end, value);
+		return ((result == -1) ? -1 : (int)middle + 1 + result);
+	}
+}
+
+/**
  * advanced_binary - a Function that searches for a
  * value in a sorted array of integers.
  * @array: Pointer to the first element of the array to search in.
@@ -14,29 +71,10 @@
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t index, middle;
-	int result;
-
 	if (array == NULL || size == 0)
 		return (-1);
 
-	printf("Searching in array: ");
-	for (index = 0; index < size; index++)
-	{
-		printf("%d", array[index]);
+	print_array(array, 0, size - 1);
 
-		if (index < size - 1)
-			printf(", ");
-	}
-	printf("\n");
-
-	middle = size / 2;
-
-	if (array[middle] == value)
-		return (middle);
-	else if (array[middle] > value)
-		return (advanced_binary(array, middle, value));
-
-	result = advanced_binary(array + middle + 1, size - middle - 1, value);
-	return ((result == -1) ? -1 : (int)(middle + 1 + result));
+	return (advanced_binary_recursive(array, 0, size - 1, value));
 }
